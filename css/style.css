@@ -1,0 +1,215 @@
+@import url("./normalize.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap");
+
+:root {
+  --main: "Roboto", sans-serif;
+  --success: rgb(59, 122, 59);
+  --fail: rgb(162, 55, 55);
+  --read: #e5e5e5;
+  --unread: #f6f6f6;
+}
+
+input {
+  padding: 5px;
+  font-size: 1rem;
+  border: 1px solid;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--main);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 533px;
+  width: 320px;
+  padding: 7px;
+  position: relative;
+}
+
+.chat__control {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 7px 0;
+}
+
+.chat__form {
+  padding: 7px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat__display {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 437px;
+  padding: 7px;
+  gap: 7px;
+  border: 1px solid;
+  overflow-y: scroll;
+}
+
+#scrolldrop {
+  position: absolute;
+  right: 7px;
+  bottom: 14px;
+}
+
+#settings_show,
+#close,
+#scrolldrop,
+#submit_name,
+#get_code,
+#set_code,
+#come_in {
+  padding: 5px;
+  min-width: 29px;
+  font-family: var(--main);
+  font-size: 1rem;
+  border: 1px solid;
+}
+
+#submit_message,
+#submit_name,
+#get_code,
+#set_code,
+#come_in {
+  min-height: 32px;
+}
+
+#write_message {
+  min-width: 267px;
+  min-height: 32px;
+  border: 1px solid;
+}
+
+.message,
+.partner__message {
+  width: fit-content;
+  max-width: 100%;
+  padding: 5px;
+  background-color: var(--read);
+}
+
+.message {
+  align-self: flex-end;
+}
+
+.message:hover .spellcheck {
+  visibility: visible;
+}
+
+.unread {
+  background-color: var(--unread);
+}
+
+.with__spellcheck {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sending__time,
+.spellcheck {
+  display: block;
+  margin-top: 5px;
+  text-align: end;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.spellcheck {
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  width: 273px;
+  min-height: 319px;
+  padding: 14px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.conf {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#confirm_code::backdrop {
+  background: none;
+}
+
+.popup__close {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  color: grey;
+  font-weight: bold;
+}
+
+#choose_name_input {
+  width: 207px;
+  min-height: 32px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.popap__content {
+  margin-top: 17px;
+}
+
+.auth__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+#auth_input,
+#confirm_input {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 7px;
+}
+
+.success {
+  text-align: center;
+  color: var(--success);
+}
+
+.fail {
+  text-align: center;
+  color: var(--fail);
+}
+
+.visible {
+  visibility: visible;
+}
+
+.happy__end {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8rem;
+  font-style: italic;
+}

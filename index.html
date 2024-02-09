@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="build/side-effect/listeners.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="chat__control">
+        <button id="settings_show">Настройки</button>
+        <button id="close">Выйти</button>
+      </div>
+      <ul class="chat__display"></ul>
+      <form class="chat__form">
+        <input
+          type="text"
+          id="write_message"
+          placeholder="сообщение..."
+          required
+        />
+      </form>
+      <button id="scrolldrop">⟱</button>
+      <dialog id="settings" class="popup">
+        <button id="settings_close" class="popup__close">x</button>
+        <div class="popup__title">Настройки</div>
+        <form id="choose_name_form" class="popap__content">
+          <label for="choose_name_input">Имя в чате:</label>
+          <input type="text" id="choose_name_input" required />
+          <button id="submit_name">-></button>
+        </form>
+      </dialog>
+      <dialog id="auth" class="popup auth">
+        <button id="auth_close" class="popup__close">x</button>
+        <div class="popup__title">Авторизация</div>
+        <form id="auth_form" class="popap__content">
+          <label for="email">Почта:</label>
+          <input
+            type="email"
+            id="auth_input"
+            required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          />
+          <div class="auth__buttons">
+            <button id="get_code">Получить код</button>
+          </div>
+        </form>
+        <span id="auth_output"></span>
+        <button id="set_code">Ввести код</button>
+      </dialog>
+      <dialog id="confirm_code" class="popup conf">
+        <button id="confirm_close" class="popup__close">x</button>
+        <div class="popup__title">Подтверждение</div>
+        <form id="confirm_form" class="popap__content">
+          <label for="confirm">Код:</label>
+          <input type="text" id="confirm_input" required />
+          <div class="auth__buttons">
+            <button id="come_in">Войти</button>
+          </div>
+        </form>
+        <span id="conf_output"></span>
+      </dialog>
+    </div>
+  </body>
+</html>
